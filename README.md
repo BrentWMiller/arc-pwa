@@ -2,6 +2,8 @@
 
 > Aspect Ratio Calculator Progressive Web App
 
+Turning https://andrew.hedges.name/experiments/aspect_ratio/ into a PWA
+
 ## Build Setup
 
 ```bash
