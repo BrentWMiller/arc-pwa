@@ -1,6 +1,6 @@
 # arc
 
-> Aspect Ratio Calculator PAW
+> Aspect Ratio Calculator PWA
 
 ## Build Setup
 
