@@ -53,7 +53,7 @@
       y1: {{y1}}
       x2: {{x2}}
       y2: {{y2}}
-      ar: {{ratio.x}}:{{ratio.y}}
+      ratio: {{ratio}}
     </pre>
   </form>
 </template>
@@ -66,10 +66,7 @@ export default {
       y1: 1080,
       x2: 0,
       y2: 0,
-      ratio: {
-        x: 16,
-        y: 9
-      }
+      ratio: "16:9"
     };
   },
   methods: {
@@ -92,6 +89,31 @@ export default {
       } else {
         console.error("failed");
       }
+
+      this.reduceRatio(this.x1, this.y1);
+    },
+    reduceRatio: function(numerator, denominator) {
+      var gcd, temp, divisor;
+
+      gcd = function(a, b) {
+        if (b === 0) return a;
+        return gcd(b, a % b);
+      };
+
+      if (numerator === denominator) return "1 : 1";
+
+      if (+numerator < +denominator) {
+        temp = numerator;
+        numerator = denominator;
+        denominator = temp;
+      }
+
+      divisor = gcd(+numerator, +denominator);
+
+      this.ratio =
+        "undefined" === typeof temp
+          ? numerator / divisor + " : " + denominator / divisor
+          : denominator / divisor + " : " + numerator / divisor;
     }
   }
 };
