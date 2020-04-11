@@ -1,6 +1,6 @@
-# arc
+# ARC PWA
 
-> Aspect Ratio Calculator PWA
+> Aspect Ratio Calculator Progressive Web App
 
 ## Build Setup
 
